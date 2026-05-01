@@ -6,23 +6,23 @@ const client = new Client({
     puppeteer: {
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
-        // حذفنا سطر executablePath تماماً ليعمل التلقائي
     }
 });
 
 client.on('qr', (qr) => {
+    // هذا السطر يحول الكود لرابط يمكنك فتحه من الجوال بسهولة
+    const qrLink = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qr)}&size=300x300`;
+    console.log('--------------------------------------------------');
+    console.log('🔗 اضغط على هذا الرابط لمسح الكود فوراً:');
+    console.log(qrLink);
+    console.log('--------------------------------------------------');
+    
+    // سيبقى الكود القديم موجوداً أيضاً للاحتياط
     qrcode.generate(qr, {small: true});
-    console.log('✅ ظهر المربع! امسحه الآن بربط الأجهزة:');
 });
 
 client.on('ready', () => {
-    console.log('🚀 البوت شغال الآن لخدمة ركن الدائم!');
-});
-
-client.on('message', async (msg) => {
-    if (msg.body.includes('تسريع')) {
-        msg.reply('أهلاً بك! جاري الدخول للوحة الإدارة لمتابعة طلبك: https://smmfollowerss.com/admin');
-    }
+    console.log('🚀 ركن الدائم متصل الآن!');
 });
 
 client.initialize();
