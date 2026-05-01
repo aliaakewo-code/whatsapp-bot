@@ -5,31 +5,22 @@ const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
         headless: true,
-        args: [
-            '--no-sandbox', 
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage'
-        ],
-        executablePath: '/usr/bin/google-chrome-stable'
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     }
 });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
-    console.log('✅ الكود جاهز! امسحه الآن لربط واتساب الإدارة:');
+    console.log('✅ ظهر الكود! امسحه الآن:');
 });
 
 client.on('ready', () => {
-    console.log('✅ ممتاز! البوت متصل الآن بلوحة تحكم موقعك.');
+    console.log('✅ البوت شغال ومرتبط بموقعك!');
 });
 
 client.on('message', async (msg) => {
-    // الرابط الجديد الذي زودتني به
-    const adminUrl = 'https://smmfollowerss.com/admin';
-
     if (msg.body.includes('تسريع')) {
-        msg.reply('🚀 جاري الدخول للوحة الإدارة ومتابعة طلبك فوراً...');
-        // هنا الكود سيتوجه للرابط الجديد https://smmfollowerss.com/admin
+        msg.reply('🚀 جاري متابعة طلبك في لوحة إدارة ركن الدائم...');
     }
 });
 
