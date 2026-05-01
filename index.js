@@ -11,17 +11,15 @@ const client = new Client({
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
-    console.log('✅ ظهر الكود! امسحه الآن:');
+    console.log('--------------------------------------------');
+    console.log('✅ كود الـ QR جاهز! امسحه الآن لربط البوت:');
+    console.log('--------------------------------------------');
 });
 
 client.on('ready', () => {
-    console.log('✅ البوت شغال ومرتبط بموقعك!');
+    console.log('🚀 البوت متصل الآن بنجاح بلوحة إدارة الموقع!');
 });
 
 client.on('message', async (msg) => {
-    if (msg.body.includes('تسريع')) {
-        msg.reply('🚀 جاري متابعة طلبك في لوحة إدارة ركن الدائم...');
-    }
-});
-
-client.initialize();
+    if (msg.body === 'تسريع') {
+        msg.reply('مرحباً بك! 🚀 جاري توجيه طلبك للوحة الإدارة في smmf
