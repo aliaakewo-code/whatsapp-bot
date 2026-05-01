@@ -11,15 +11,17 @@ const client = new Client({
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
-    console.log('--------------------------------------------');
-    console.log('✅ كود الـ QR جاهز! امسحه الآن لربط البوت:');
-    console.log('--------------------------------------------');
+    console.log('✅ ممتاز! امسح الكود الآن لربط واتساب الإدارة:');
 });
 
 client.on('ready', () => {
-    console.log('🚀 البوت متصل الآن بنجاح بلوحة إدارة الموقع!');
+    console.log('🚀 البوت متصل الآن وجاهز لخدمة عملائك!');
 });
 
 client.on('message', async (msg) => {
-    if (msg.body === 'تسريع') {
-        msg.reply('مرحباً بك! 🚀 جاري توجيه طلبك للوحة الإدارة في smmf
+    if (msg.body.includes('تسريع')) {
+        msg.reply('استلمت طلبك، جاري الدخول للوحة الإدارة https://smmfollowerss.com/admin لمتابعته.');
+    }
+});
+
+client.initialize();
