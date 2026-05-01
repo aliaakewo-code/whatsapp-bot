@@ -11,16 +11,16 @@ const client = new Client({
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
-    console.log('✅ ممتاز! كود الـ QR ظهر الآن، امسحه بسرعة:');
+    console.log('✅ الكود ظهر أخيراً! امسحه الآن:');
 });
 
 client.on('ready', () => {
-    console.log('🚀 البوت شغال ومرتبط بلوحة الإدارة!');
+    console.log('🚀 ممتاز! البوت شغال الآن.');
 });
 
 client.on('message', async (msg) => {
     if (msg.body.includes('تسريع')) {
-        msg.reply('مرحباً بك في ركن الدائم! 🚀 جاري متابعة طلبك في لوحة الإدارة: https://smmfollowerss.com/admin');
+        msg.reply('مرحباً بك في ركن الدائم! جاري المتابعة: https://smmfollowerss.com/admin');
     }
 });
 
