@@ -6,21 +6,22 @@ const client = new Client({
     puppeteer: {
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
+        // حذفنا سطر executablePath تماماً ليعمل التلقائي
     }
 });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
-    console.log('✅ الكود ظهر أخيراً! امسحه الآن:');
+    console.log('✅ ظهر المربع! امسحه الآن بربط الأجهزة:');
 });
 
 client.on('ready', () => {
-    console.log('🚀 ممتاز! البوت شغال الآن.');
+    console.log('🚀 البوت شغال الآن لخدمة ركن الدائم!');
 });
 
 client.on('message', async (msg) => {
     if (msg.body.includes('تسريع')) {
-        msg.reply('مرحباً بك في ركن الدائم! جاري المتابعة: https://smmfollowerss.com/admin');
+        msg.reply('أهلاً بك! جاري الدخول للوحة الإدارة لمتابعة طلبك: https://smmfollowerss.com/admin');
     }
 });
 
