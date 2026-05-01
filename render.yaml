@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: whatsapp-bot-smm
+    runtime: docker
+    plan: free
+    region: oregon
