@@ -1,7 +1,7 @@
 {
   "name": "whatsapp-bot",
   "version": "1.0.0",
-  "description": "WhatsApp Bot for SMM",
+  "description": "SMM Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
