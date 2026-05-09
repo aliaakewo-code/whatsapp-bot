@@ -1,3 +1,9 @@
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('البوت يعمل الآن بنجاح!'));
+app.listen(3000, () => console.log('خادم الاستيقاظ جاهز على المنفذ 3000'));
+
+// ... (هنا يكمل باقي كود الواتساب والتلجرام الذي أعطيتك إياه سابقاً)
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const axios = require('axios');
 
